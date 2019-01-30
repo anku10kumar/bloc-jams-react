@@ -40,9 +40,9 @@ render() {
             <tr className="song"
             key={index}>
 
-        <td>  {this.state.songs.number}( (song, index) )</td>
-      <td>{this.state.album.map}( (song, title) )</td>
-    <td>{this.state.album.map}( (song, duration) )</td>
+        <td>  {index} </td>
+      <td>{song. title} </td>
+    <td>{song. duration}</td>
 
   </tr>
 ))}
