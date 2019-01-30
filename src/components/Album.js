@@ -14,7 +14,7 @@ class Album extends Component {
     };
 
   }
-}
+
 
 render() {
   return (
@@ -36,12 +36,17 @@ render() {
 <col id="song-duration-column" />
 </colgroup>
 <tbody>
-  <tr key={index}>
-        <td>  {this.state.songs.number}( (songs, index) )</td>
-      <td>{this.state.album.map}( (songs, title) )</td>
-    <td>{this.state.album.map}( (songs, duration) )</td>
+  {this.state.album.songs.map((song, index) => (
+            <tr className="song"
+            key={index}>
+
+        <td>  {this.state.songs.number}( (song, index) )</td>
+      <td>{this.state.album.map}( (song, title) )</td>
+    <td>{this.state.album.map}( (song, duration) )</td>
 
   </tr>
+))}
+
 </tbody>
 </table>
 
@@ -49,6 +54,7 @@ render() {
 
 );
 
+}
 }
 
 
