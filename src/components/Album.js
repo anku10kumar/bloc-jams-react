@@ -10,9 +10,14 @@ class Album extends Component {
     });
 
     this.state = {
-      album: album
+
+      album: album,
+      currentSong: album.songs[0],
+      isPlaying: false
     };
 
+    this.audioElement = document.createElement('audio');
+ this.audioElement.src = album.songs[0].audioSrc;
   }
 
 
@@ -40,7 +45,7 @@ render() {
             <tr className="song"
             key={index}>
 
-        <td>  {index} </td>
+        <td>  {index+1} </td>
       <td>{song. title} </td>
     <td>{song. duration}</td>
 
