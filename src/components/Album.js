@@ -40,7 +40,7 @@ render() {
             <tr className="song"
             key={index}>
 
-        <td>  {index} </td>
+        <td>  {index+1} </td>
       <td>{song. title} </td>
     <td>{song. duration}</td>
 
