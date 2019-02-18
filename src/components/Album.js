@@ -13,17 +13,19 @@ class Album extends Component {
 
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      playIcon: "" ,
+
     };
-this.audioElement = document.createElement('audio');
-this.audioElement.src = album.songs[0].audioSrc;
+    this.audioElement = document.createElement('audio');
+    this.audioElement.src = album.songs[0].audioSrc;
   }
   play() {
-      this.audioElement.play();
-      this.setState({ isPlaying: true });
-    }
+    this.audioElement.play();
+    this.setState({ isPlaying: true });
+  }
 
-    pause() {
+  pause() {
     this.audioElement.pause();
     this.setState({ isPlaying: false });
   }
@@ -45,6 +47,17 @@ this.audioElement.src = album.songs[0].audioSrc;
     }
   }
 
+  mouseEnter(song) {
+
+    this.setState({playIcon: song});
+
+  }
+
+  mouseLeave() {
+
+    this.setState({playIcon: ""});
+  }
+
   render() {
     return (
       <section className="album">
@@ -58,6 +71,8 @@ this.audioElement.src = album.songs[0].audioSrc;
   </div>
 </section>
 
+
+
 <table id="song-list">
   <colgroup>
     <col id="song-number-column" />
@@ -66,11 +81,15 @@ this.audioElement.src = album.songs[0].audioSrc;
 </colgroup>
 <tbody>
   {this.state.album.songs.map((song, index) => (
-    <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+    <tr className="song" key={index} onClick={() => this.handleSongClick(song)}
+      onMouseEnter = {() => this.mouseEnter (index)}
+      onMouseLeave = {() => this.mouseLeave (index)}>
 
-      <td>  {index+1} </td>
-    <td>{song. title} </td>
-  <td>{song. duration}</td>
+      <td> <span className = {this.state.playIcon === index ? 'icon ion-md-arrow-dropright-circle' : 'icon ion-md-pause '} /></td>
+
+
+    <td> {song. title} </td>
+  <td> {song. duration}</td>
 
 </tr>
 ))}
