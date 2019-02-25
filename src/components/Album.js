@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
+
 class Album extends Component {
   constructor(props) {
     super(props);
@@ -18,14 +19,13 @@ class Album extends Component {
       duration: album.songs[0].duration,
       isPlaying: false,
       playIcon: "" ,
-      currentVolume: 0,
       volume: 0.5,
 
 
     };
     this.audioElement = document.createElement('audio');
     this.audioElement.src = album.songs[0].audioSrc;
-    this.audioElement.volume = 0.5
+    this.audioElement.volume = this.state.volume;
   }
 
   componentDidMount(){
@@ -34,26 +34,19 @@ class Album extends Component {
         this.setState({ currentTime: this.audioElement.currentTime });
       },
       durationchange: e => {
-        this.setState({ duration: this.audioElement.duration });
-      },
-      volumeupdate: e => {
-        this.setState({currentVolume: this.audioElement.currentVolume});
-      },
-      lengthchange: e => {
-        this.setState ({length: this.audioElement.length});
+        this.setState({ duration: this.audioElement.duration })
+
       }
     };
     this.audioElement.addEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.addEventListener('durationchange',this.eventListeners.durationchange);
-    this.audioElement.addEventListener('volumeupdate' , this.eventListeners.volumeupdate);
-    this.audioElement.addEventListener('lengthchange' , this.eventListeners.lengthchange);
+
   }
   componentWillUnmount(){
     this.audioElement.src = null;
     this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
-    this.audioElement.removeEventListener('volumeupdate', this.eventListeners.volumeupdate);
-    this.audioElement.removeEventListener('lengthchange', this.eventListeners.lengthchange);
+
   }
 
   play() {
@@ -105,10 +98,10 @@ class Album extends Component {
     this.setState({ currentTime: newTime });
   }
 
-  handleVolumeChange(e){
-    const newVolume = this.audioElement.length * e.target.value;
-    this.audioElement.currentVolume = newVolume;
-    this.setState({currentVolume: newVolume });
+  handleVolumeChange(e) {
+    const newVolume = e.target.value;
+    this.audioElement.volume = newVolume;
+    this.setState({ volume: newVolume });
   }
 
   formatTime(time){
@@ -184,9 +177,9 @@ class Album extends Component {
           <td key = 'number'> {this.playPause (song, index)}</td>
         <td key='title' > {song.title} </td>
       <td>{this.formatTime(song.duration)}</td>
-    <td key='duration' > {song.duration} </td>
 
-</tr>
+
+  </tr>
 ))}
 
 
@@ -197,7 +190,7 @@ class Album extends Component {
   isPlaying={this.state.isPlaying}
   currentSong={this.state.currentSong}
   currentTime={this.audioElement.currentTime}
-  length={this.audioElement.length}
+  volume={this.state.volume}
   duration={this.audioElement.duration}
   handleSongClick={() => this.handleSongClick(this.state.currentSong)}
   handlePrevClick={() => this.handlePrevClick()}
