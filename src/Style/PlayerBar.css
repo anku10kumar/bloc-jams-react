@@ -1,0 +1,62 @@
+
+
+.player-bar{
+
+
+  background-color: black;
+  color: #03A9F4;
+  font-size: 32;
+  height: 40;
+  width:auto;
+
+}
+
+#time-control{
+  background-color: black;
+  padding: 25px;
+  margin: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#volume-control{
+  color: red;
+  position: sticky;
+  top: 0;
+  border: 2px ;
+  padding: 25px;
+  margin: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#next{
+
+  background-color: lightblue;
+  padding: 25px;
+  margin: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  opacity: 1;
+  text-shadow: 2px 2px pink;
+}
+
+#play-pause{
+  background-color: lightblue;
+  padding: 25px;
+  margin: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  opacity: 1;
+  border-radius: 25px;
+  text-shadow: 2px 2px pink;
+}
+#previous{
+  background-color: lightblue;
+  padding: 25px;
+  margin: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  opacity: 1;
+  text-shadow: 2px 2px pink;
+}

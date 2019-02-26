@@ -1,0 +1,55 @@
+
+
+.album{
+position: relative;
+  background-color: black;
+  color: #03A9F4;
+  font-size: 10;
+
+}
+
+#album-info{
+  background-color: black;
+  color: #03A9F4;
+  font-size: 32;
+
+  font-style: italic;
+  position: relative;
+}
+
+#album-cover-art{
+  height: 20;
+  width: 12;
+  left: 10px;
+}
+
+
+#song-list{
+  font-family:Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+  position: relative;
+  left:550px;
+  padding: 25px;
+   margin: 25px;
+   padding-top: 12px;
+   padding-bottom: 12px;
+}
+
+img {
+  border-radius: 50%;
+}
+
+#song-list tr:hover {background-color: lightblue;}
+
+#song-list th {
+  width: 30px;
+  border: 25px solid green;
+ padding: 25px;
+  margin: 25px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}

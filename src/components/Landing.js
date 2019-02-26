@@ -1,4 +1,5 @@
 import React from 'react';
+import './../Style/Landing.css';
 
 const Landing = () => (
   <section className="landing">
