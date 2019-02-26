@@ -14,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Bloc Jams</h1>
+          <h1>Rosco Jams</h1>
 
         <nav>
           <Link to='/'>Landing</Link>
