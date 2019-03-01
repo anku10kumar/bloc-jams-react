@@ -18,7 +18,7 @@ class Album extends Component {
       currentTime: 0,
       duration: album.songs[0].duration,
       isPlaying: false,
-      playIcon: "" ,
+      hovered: null ,
       volume: 0.5,
 
 
@@ -123,28 +123,39 @@ class Album extends Component {
 
 
   mouseEnter(song) {
-    this.setState({playIcon: song})
+    this.setState({hovered: song})
   }
 
   mouseLeave() {
-    this.setState({playIcon: ""});
+    this.setState({hovered: null});
   }
 
+
   playPause (song, index) {
+    const isHovered = this.state.hovered == song;
     const isSameSong = this.state.currentSong === song;
-    if (this.state.playIcon === song) {
-      if (this.state.isPlaying && isSameSong){
-        return <span className="icon ion-md-pause"></span>;
-        } else {
-          return <span className="icon ion-md-play"></span>;
-          }
-        } else {
-          if (this.state.isPlaying && isSameSong){
-            return <span className="icon ion-md-pause"></span>;
-            } else {
-              return <span className="song-number">{index+1}</span>;
-              }
-            }
+    if ( isSameSong && this.state.isPlaying) {
+      return <span className="icon ion-md-pause"></span>;
+    } else if (isSameSong && !this.state.isPlaying){
+       return <span className="icon ion-md-play"></span>;
+    } else if (!isSameSong && isHovered){
+       return <span className="icon ion-md-play"></span>;
+    } else {
+      return <span className="song-number">{index+1}</span>;
+    }
+    // if (this.state.hovered === song) {
+    //   if (this.state.isPlaying && isSameSong){
+    //     return <span className="icon ion-md-pause"></span>;
+    //     } else {
+    //       return <span className="icon ion-md-play"></span>;
+    //       }
+    //     } else {
+    //       if (this.state.isPlaying && isSameSong){
+    //         return <span className="icon ion-md-pause"></span>;
+    //         } else {
+    //           return <span className="song-number">{index+1}</span>;
+    //           }
+    //         }
           }
 
           render() {

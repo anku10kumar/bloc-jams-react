@@ -35,7 +35,7 @@ class PlayerBar extends Component {
 </section>
 
 <section id="volume-control">
-  <div className="icon ion-volume-high"></div>
+  <div className="ion-md-volume-high"></div>
           <input
             type="range"
             className="seek-bar"

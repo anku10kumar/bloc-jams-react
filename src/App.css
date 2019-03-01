@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: black;
+  background-color: ##61E6F4;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,49 +20,43 @@
 }
 
 body{
-  background-color: black;
-
-  height: 125vh;
-
-  background-size: cover;
+  background-color:black;
+  height: 85vh;
+  background-size:auto;
   font-family: sans-serif;
-  margin-top: 80px;
-  padding: 30px;
+  margin-top: 700px;
+  padding: 10px ;
+  font-style: oblique;
+  width: auto;
 }
-
-
-
 
 nav
 {
-  padding: 30px;
-
+  padding: 10px 10px;
 }
 
-.link {
-  font-family: Verdana;
-  font-size:14px;
-  list-style:none;
-  margin:0 auto;
-  padding: 300px;
-  width:455px;
-  overflow: auto;
-  color: black;
-  
+nav a {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #93E1F4;
+  color: #333333;
+  padding: 15px 20px 20px 20px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius:  40%;
+}
+nav a:hover{
+  text-decoration: none;
+  background-color: #BC05A9;
 }
 
-
-
-.App-link {
-  color: #61dafb;
-}
 
 h1{
-
   font-style: italic;
-  color: rgb(210, 31, 151);
-  padding:10;
-
+  color: ###61E6F4;
+  padding:10px;
 }
 
 @keyframes App-logo-spin {

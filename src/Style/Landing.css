@@ -1,18 +1,27 @@
 
 h1{
-  font-style: italic;
-  color: white;
+  font-style: oblique;
+  color: #61E6F4;
   padding:10;
 }
 
 h2{
-  font-style: italic;
-  color:white;
+  font-style: oblique;
+  color:#61E6F4;
   padding:10;
 }
 
 p{
-  font-style: italic;
-  color:white;
+  font-style: oblique;
+  color:#61E6F4;
   padding:10;
+}
+
+body{
+  background-image: url(Image-1.jpg);
+  background-repeat: no-repeat;
+  background-position:center;
+
+  background-size: cover;
+  font-style: oblique;
 }

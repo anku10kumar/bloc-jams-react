@@ -17,7 +17,7 @@ class App extends Component {
           <h1>Rosco Jams</h1>
 
         <nav>
-          <Link to='/'>Landing</Link>
+          <Link to='/'>Home</Link>
         <Link to='/library'>Library</Link>
 
     </nav>
